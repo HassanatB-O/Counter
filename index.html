@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Counter</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link rel="shortcut icon" href="cat.svg">
+    <script src='main.js'></script>
+</head>
+<body>
+    <div class="body">
+        <h1>COUNTER</h1>
+            <div class="value-button">
+        <button type="button" id="number" onclick="decreaseValue()" value="Decrease Value">Decrease Count</button>
+        </div>
+        <div id="result"></div>
+<div class="value-button">
+    <button type="menu" id="number" onclick="increaseValue()" value="Increase Value">Increase Count</button>
+</div>
+    </div>
+    <script>
+        function increaseValue()
+        {
+            if (typeof(Storage) !== "undefined")
+            if (localStorage.clickcount)
+            {
+                localStorage.clickcount = Number(localStorage.clickcount)+1;
+            }
+            else
+            {
+                localStorage.clickcount = 1;
+            }
+            document.getElementById("result").innerHTML= localStorage.clickcount;
+        }
+        function decreaseValue()
+        {
+            if (typeof(Storage) !== "undefined")
+            if (localStorage.clickcount)
+            {
+                localStorage.clickcount = Number(localStorage.clickcount)-1;
+            }
+            else
+            {
+                localStorage.clickcount = 1;
+            }
+            document.getElementById("result").innerHTML= localStorage.clickcount;
+        }
+    </script>
+</div>  
+<footer>
+    <p>@2020 Developed by Busari Hassanat</p>
+    <a href="https://www.twitter.com/HOBespecial/" target="blank" />
+    <div class="column">
+        <img src="T.svg" alt="LOGO" width="75px" height="75px" />
+    </div>  
+</body>
+</html>
